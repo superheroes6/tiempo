@@ -20,7 +20,7 @@ class ListaDeListas:
     def consultar_clima(self, ciudad, hora):
         actual_letra = self.cabeza
         while actual_letra:
-            if actual_letra.letra.lower() == ciudad.lower():  # Comparación insensible a mayúsculas
+            if actual_letra.letra.lower() == ciudad.lower():
                 actual_clima = actual_letra.lista_climas
                 contador = 0
                 while actual_clima:

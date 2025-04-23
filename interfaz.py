@@ -17,24 +17,23 @@ def clima_interfaz(ciudad, hora):
 def generar_clima(ciudad):
     resultado = f"Clima para {ciudad}:\n\n"
     for hora in range(24):
-        temperatura = random.randint(-10, 40)  # Temperatura aleatoria entre -10 y 40 grados
-        condicion = random.choice(["Soleado", "Nublado", "Lluvioso", "Tormentoso", "Nevado"])  # Condición aleatoria
+        temperatura = random.randint(-10, 40)
+        condicion = random.choice(["Soleado", "Nublado", "Lluvioso", "Tormentoso", "Nevado"])
         resultado += f"{hora:02d}:00 - {temperatura}°C, {condicion}\n"
     return resultado
 
 def generar_clima_para_hora(ciudad, hora):
     if 6 <= hora < 12:
         condicion = random.choice(["Soleado", "Nublado", "Lluvioso"])
-        temperatura = random.randint(10, 25)  # Temperatura moderada por la mañana
+        temperatura = random.randint(10, 25)
     elif 12 <= hora < 18:
         condicion = random.choice(["Soleado", "Nublado", "Lluvioso", "Tormentoso"])
-        temperatura = random.randint(20, 35)  # Temperatura más cálida por la tarde
+        temperatura = random.randint(20, 35)
     elif 18 <= hora < 24:
         condicion = random.choice(["Nublado", "Lluvioso", "Tormentoso"])
-        temperatura = random.randint(15, 25)  # Temperatura más fresca por la noche
-    else:  # Horas de la madrugada
+        temperatura = random.randint(15, 25)
         condicion = random.choice(["Nublado", "Nevado", "Lluvioso"])
-        temperatura = random.randint(-5, 10)  # Temperatura más fría por la madrugada
+        temperatura = random.randint(-5, 10)
     return f"A las {hora:02d}:00 en {ciudad}, el clima será {condicion} con una temperatura de {temperatura}°C."
 
 def mostrar_clima():
