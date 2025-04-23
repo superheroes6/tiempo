@@ -5,11 +5,11 @@ import tkinter as tk
 from tkinter import messagebox
 
 estructura = ListaDeListas()
-estructura.agregar_letra('A', ['Soleado', 'Nublado', 'Tormentoso'])
-estructura.agregar_letra('G', ['Lluvioso', 'Soleado'])
-estructura.agregar_letra('L', ['Nublado', 'Lluvioso'])
-estructura.agregar_letra('O', ['Soleado', 'Nublado'])
-estructura.agregar_letra('Y', ['Lluvioso', 'Nublado'])
+estructura.agregar_letra('Madrid', ['Soleado', 'Nublado', 'Tormentoso'])
+estructura.agregar_letra('Barcelona', ['Lluvioso', 'Soleado'])
+estructura.agregar_letra('Valencia', ['Nublado', 'Lluvioso'])
+estructura.agregar_letra('Sevilla', ['Soleado', 'Nublado'])
+estructura.agregar_letra('Bilbao', ['Lluvioso', 'Nublado'])
 
 def clima_interfaz(ciudad, hora):
     return estructura.consultar_clima(ciudad, hora)
@@ -60,7 +60,7 @@ def lanzar_interfaz():
     ventana = tk.Tk()
     ventana.title("Clima Dinámico")
 
-    tk.Label(ventana, text="Ingrese el nombre de la ciudad (A, G, L, O, Y):").pack(pady=5)
+    tk.Label(ventana, text="Ingrese el nombre de la ciudad (Madrid, Barcelona, Valencia, Sevilla, Bilbao):").pack(pady=5)
     entrada_ciudad = tk.Entry(ventana, width=30)
     entrada_ciudad.pack(pady=5)
 
