@@ -43,30 +43,42 @@ def lanzar_interfaz():
     )
     titulo.pack(pady=10)
 
-    tk.Label(
+    decoracion = tk.Label(
         ventana,
+        text="☀️🌧️⛅❄️🌩️",
+        font=("Helvetica", 30),
+        bg="#87CEEB",
+        fg="white"
+    )
+    decoracion.pack(pady=10)
+
+    frame_centro = tk.Frame(ventana, bg="#87CEEB")
+    frame_centro.pack(pady=10)
+
+    tk.Label(
+        frame_centro,
         text="Seleccione una ciudad:",
         font=("Helvetica", 12),
         bg="#87CEEB",
         fg="white"
-    ).pack(pady=5)
+    ).grid(row=0, column=0, padx=10, pady=5, sticky="e")
     seleccion_ciudad = ttk.Combobox(
-        ventana,
+        frame_centro,
         values=["Madrid", "Barcelona", "Valencia", "Sevilla", "Bilbao"],
         state="readonly",
         font=("Helvetica", 10)
     )
-    seleccion_ciudad.pack(pady=5)
+    seleccion_ciudad.grid(row=0, column=1, padx=10, pady=5, sticky="w")
 
     tk.Label(
-        ventana,
+        frame_centro,
         text="Ingrese la hora (0-23):",
         font=("Helvetica", 12),
         bg="#87CEEB",
         fg="white"
-    ).pack(pady=5)
-    entrada_hora = tk.Entry(ventana, width=5, font=("Helvetica", 10))
-    entrada_hora.pack(pady=5)
+    ).grid(row=1, column=0, padx=10, pady=5, sticky="e")
+    entrada_hora = tk.Entry(frame_centro, width=5, font=("Helvetica", 10))
+    entrada_hora.grid(row=1, column=1, padx=10, pady=5, sticky="w")
 
     boton = tk.Button(
         ventana,

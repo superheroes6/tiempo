@@ -1,4 +1,4 @@
-from nodo import NodoLetra
+from nodo_letra import NodoLetra
 
 class ListaDeListas:
     def __init__(self):

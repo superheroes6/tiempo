@@ -1,7 +1,4 @@
-class NodoClima:
-    def __init__(self, clima):
-        self.clima = clima
-        self.siguiente = None
+from nodo_clima import NodoClima
 
 class NodoLetra:
     def __init__(self, letra):
