@@ -21,11 +21,16 @@ class ListaDeListas:
         actual_letra = self.cabeza
         while actual_letra:
             if actual_letra.letra.lower() == ciudad.lower():
+                if isinstance(actual_letra.lista_climas, dict):
+                    return actual_letra.lista_climas
                 actual_clima = actual_letra.lista_climas
                 contador = 0
                 while actual_clima:
                     if contador == hora % len(self.obtener_climas(actual_letra)):
-                        return f"A las {hora:02d}:00 en {ciudad}, el clima será {actual_clima.clima}."
+                        clima = actual_clima.clima
+                        if clima == "Soleado" and (hora < 6 or hora >= 18):
+                            clima = "Despejado"
+                        return f"A las {hora:02d}:00 en {ciudad}, el clima será {clima}."
                     actual_clima = actual_clima.siguiente
                     contador += 1
                 return "No hay clima para esa hora."
